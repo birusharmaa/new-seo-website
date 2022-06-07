@@ -1,0 +1,174 @@
+:root {
+    --primary: #e1ad01;
+    --primary-light: #f5d159;
+    --primary-rgb: 245, 209, 89;
+    --sidebarColor: #fff;
+    --text-family: cursive;
+    --custom-blur: rgba(255, 255, 255, 0.2);
+}
+
+.table1 th {
+    padding: 1rem 2rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1rem !important;
+    font-size: 0.7rem;
+    font-weight: 900 !important;
+}
+
+.table1 td {
+    padding: 1rem 2rem !important;
+}
+
+.table1 thead {
+    box-shadow: 0 5px 10px #e1e5ee;
+}
+
+.table1 tr:nth-child(even) {
+    background-color: #f4f6fb !important;
+}
+
+.text-yellow {
+    color: var(--primary);
+}
+
+.text-family {
+    font-family: var(--text-family);
+}
+
+.shadow1 {
+    box-shadow: 0 5px 10px #e1e5ee !important;
+}
+
+.card-style {
+    position: relative;
+}
+
+.glass {
+    position: absolute;
+    width: 100%;
+    /* height: 300px; */
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    border: 2px solid #ffff;
+    overflow: hidden;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.border2 {
+    border: 2px solid #ffff !important;
+}
+
+.glass::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: #968de80d;
+    pointer-events: none;
+    transform: skewX(345deg);
+}
+
+.table-hover tbody tr:hover {
+    background: #ffffff21 !important;
+    color: var(--bs-table-hover-color);
+}
+
+.size {
+    font-size: 40vmax;
+    -webkit-animation: rotation 8s infinite linear;
+    color: #e1e5ee5e;
+    display: list-item;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+    }
+}
+
+.element {
+    position: absolute;
+    height: 20px;
+    margin: 6px;
+    width: 20px;
+    background-color: rgb(255, 26, 137);
+    animation: pulse 3s ease infinite alternate, nudge 5s linear infinite alternate;
+    border-radius: 100%;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        background-color: rgb(255, 72, 72);
+    }
+    50% {
+        background-color: orange;
+    }
+}
+
+@keyframes nudge {
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(370px, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.element2 {
+    position: absolute;
+    height: 20px;
+    margin: 6px;
+    width: 20px;
+    background-color: rgb(255, 234, 0);
+    animation: pulse1 3s ease infinite alternate, nudge1 5s linear infinite alternate;
+    border-radius: 100%;
+}
+
+@keyframes pulse1 {
+    0%,
+    100% {
+        background-color: rgb(238, 255, 0);
+    }
+    50% {
+        background-color: rgb(0, 247, 255);
+    }
+}
+
+@keyframes nudge1 {
+    0%,
+    100% {
+        transform: translate(370px, 0);
+    }
+    50% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(370px, 0);
+    }
+}
+
+.custom-blur {
+    background: var(--custom-blur);
+    margin: 10px;
+    backdrop-filter: blur(2px);
+    border-radius: 0.3rem !important;
+}
+
+.custom-gradient {
+    /* background: radial-gradient(ellipse at bottom left, #f4f3f8 40%, rgba(0, 163, 203, 0) 40%), radial-gradient(ellipse at top right, #968deb 30%, rgba(0, 163, 203, 0) 30%), linear-gradient(to right, #c7c3ed 0%, #7367f0 33%, #fff5d2 33%, #d55d6400 66%, #251b2c00 66%); */
+    background-image: url(https://images.pexels.com/photos/7668029/pexels-photo-7668029.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: inherit;
+}

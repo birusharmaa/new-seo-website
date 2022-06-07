@@ -1,0 +1,39 @@
+.header-background-color{
+    background-color:var(--header_background)!important;
+}  
+.header-text{
+    color: var(--header_text)!important;
+}
+
+.navbar-background{
+    background-color:var(--navbar_background)!important;
+}
+.navbar-scroll .navbar-top.navbar-dark{
+    --bs-dark : var(--navbar_background)!important
+}
+
+.navbar-background .nav-link{
+    color:var(--navbar_text)!important;
+}
+.navbar-dark .navbar-nav .nav-link span{
+    color:var(--navbar_text)!important;
+}
+.searchbar_color{
+    color:var(--searchbar_color)!important;
+}
+
+.footer-background{
+    background-color:var(--footer_background)!important;
+}
+
+footer .text-light, .footer-text{
+    color:var(--footer_text_color)!important;
+}
+.copyright-background{
+    background-color:var(--copyright_background)!important;
+}
+.copyright-text, .copyright-text a{
+    color:var(--copyright_text_color)!important;
+}
+
+
