@@ -75,7 +75,6 @@
 <?= $this->include('theme3/frontend/layout/gallery_images') ?>
 
 
-
 </div>
 
 <?= $this->endSection() ?>
