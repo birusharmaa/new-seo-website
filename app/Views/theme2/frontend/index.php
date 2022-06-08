@@ -199,6 +199,7 @@ $slider_images = !empty($menu_lists[0]['slider_images'])?$menu_lists[0]['slider_
         </div>
     </div>
 </div>
+
 <div class="pt-130 pb-30 bg-gray-light callToActionPrev">
     <div class="container">
         <div class="row mb-50 mt-20 ">
@@ -243,6 +244,13 @@ $slider_images = !empty($menu_lists[0]['slider_images'])?$menu_lists[0]['slider_
         </div>
     </div>
 </div>
+
+<!-- --------Our Videos----------- -->
+<?= $this->include('theme2/frontend/layout/video_gallery') ?>
+
+<!-- --------Image Gallery---------- -->
+<?= $this->include('theme2/frontend/layout/gallery_images') ?>
+
 
 <?= $this->endSection() ?>
 

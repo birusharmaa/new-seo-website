@@ -26,10 +26,24 @@ class Home extends UiController {
                 $user_id = $user_data['login_id'];
             }
         }
+
+        /**
+         * Make Slider images array
+         */
         $slider = $this->user_slider->getSlider('Home');
         if(!empty($slider)){
             $slider = $slider[0]['slider_image'];
         }
+
+        /**
+         * Make gallery images array
+         */
+        $images = $this->user_slider->galleryImages('Home');
+        
+         /**
+         * Make video gallery array
+         */
+        $video =  $this->user_slider->getVideoLists('Home');
         
         $pageData = [
             'title'         => 'Home',
@@ -41,10 +55,11 @@ class Home extends UiController {
             'custom_section'=> $this->custom_section,
             'services'      => $this->services,
             'products'      => $this->products,
-            'videoes'       => $this->videoes,
+            'videoes'       => $video,
             'posts'         => $this->posts,
             'colors'        => $this->colors,
             'cart'          => cart_history(),
+            'gallery_images'=> $images,
         ];
         return view($this->user['theme_name'].'/'.'frontend/index', $pageData);
     }

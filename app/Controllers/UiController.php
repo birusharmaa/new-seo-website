@@ -4,8 +4,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Libraries\User_details;
 
-class UiController extends BaseController
-{
+class UiController extends BaseController{
     
     public $user;
     public $final_menu;
@@ -20,9 +19,8 @@ class UiController extends BaseController
         $this->custom_section =  $user_details->getCustomSectionData();
         $this->services =  $user_details->getServicesData();
         $this->products =  $user_details->getAllProductsList();
-        $this->videoes  =  $user_details->getVideoLists();
+        //$this->videoes  =  $user_details->getVideoLists();
         $this->posts    =  $user_details->getAllPostLists();
         $this->colors   =  $user_details->getColors();
-        
     }    
 }

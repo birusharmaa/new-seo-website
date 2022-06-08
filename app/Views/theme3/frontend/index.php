@@ -43,6 +43,13 @@ $slider_images = !empty($menu_lists[0]['slider_images']) ? $menu_lists[0]['slide
     }
 ?>
 
+<!-- --------Our Videos----------- -->
+<?= $this->include('theme3/frontend/layout/video_gallery') ?>
+
+<!-- --------Image Gallery---------- -->
+<?= $this->include('theme3/frontend/layout/gallery_images') ?>
+
+
 <!-- ----- Our Services------- -->
 <section>
     <div class="services section-padding">

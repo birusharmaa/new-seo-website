@@ -35,7 +35,7 @@ class ManageSection extends BaseController
         }
 
         $data['pages'] =  $this->manage->get_menu_pages($user_data["user_id"]);
-        $data['data'] =  $this->manage->get_all_sliders($user_data["user_id"]);
+        $data['data'] =   $this->manage->get_all_sliders($user_data["user_id"]);
         $data['slider'] =  $this->manage->all_slider($user_data["user_id"]);
         $data['color'] =  getThemeColor($user_data["user_id"]);
         $data['title'] = "Sliders Section";
@@ -224,7 +224,7 @@ class ManageSection extends BaseController
         if ($this->session->has('login_user')) {
             $user_data = $this->session->get('login_user');
         }
-        $data['pages'] =  $this->manage->get_all_pages($user_data["user_id"]);
+        $data['pages'] =  $this->manage->get_menu_pages($user_data["user_id"]);
         $data['slider_section'] =  $this->manage->get_all_sliders($user_data["user_id"]);
         $data['slider'] =  $this->manage->all_slider($user_data["user_id"]);
         if ($data) {
@@ -302,7 +302,7 @@ class ManageSection extends BaseController
         if ($this->session->has('login_user')) {
             $user_data = $this->session->get('login_user');
         }
-        $data['pages'] =  $this->manage->get_all_pages($user_data["user_id"]);
+        $data['pages'] =  $this->manage->get_menu_pages($user_data["user_id"]);
         $data['data'] =  $this->manage->get_all_custom_section($user_data["user_id"]);
         $data['color'] =  getThemeColor($user_data["user_id"]);
         $data['title'] = "Custom Section";
@@ -465,7 +465,7 @@ class ManageSection extends BaseController
         if ($this->session->has('login_user')) {
             $user_data = $this->session->get('login_user');
         }
-        // $data['pages'] =  $this->manage->get_all_pages($user_data["user_id"]); 
+        // $data['pages'] =  $this->manage->get_menu_pages($user_data["user_id"]); 
         $data['data'] =  $this->manage->all_services($user_data["user_id"]);
         $data['color'] =  getThemeColor($user_data["user_id"]);
         $data['title'] = "Services";
@@ -634,7 +634,7 @@ class ManageSection extends BaseController
         if ($this->session->has('login_user')) {
             $user_data = $this->session->get('login_user');
         }
-        $data['pages'] =  $this->manage->get_all_pages($user_data["user_id"]);
+        $data['pages'] =  $this->manage->get_menu_pages($user_data["user_id"]);
         $data['services'] =  $this->manage->all_services($user_data["user_id"]);
         $data['data'] =  $this->manage->all_services_section($user_data["user_id"]);
         $data['color'] =  getThemeColor($user_data["user_id"]);
@@ -993,7 +993,7 @@ class ManageSection extends BaseController
             $user_data = $this->session->get('login_user');
         }
         $data['data'] =  $this->manage->all_products_section($user_data["user_id"]);
-        $data['pages'] =  $this->manage->get_all_pages($user_data["user_id"]);
+        $data['pages'] =  $this->manage->get_menu_pages($user_data["user_id"]);
         $data['products'] =  $this->manage->all_Products($user_data["user_id"]);
         $data['color'] =  getThemeColor($user_data["user_id"]);
         $data['title'] = "Product Section";
@@ -1117,7 +1117,7 @@ class ManageSection extends BaseController
         if ($this->session->has('login_user')) {
             $user_data = $this->session->get('login_user');
         }
-        $pages =  $this->manage->get_all_pages($user_data["user_id"]);
+        $pages =  $this->manage->get_menu_pages($user_data["user_id"]);
         $products =  $this->manage->all_Products($user_data["user_id"]);
         $data =  $this->manage->all_products_section($user_data["user_id"]);
         if ($data) {
@@ -1131,7 +1131,7 @@ class ManageSection extends BaseController
             $user_data = $this->session->get('login_user');
         }
         $data['data'] =  $this->manage->all_tags_keywords($user_data["user_id"]);
-        $data['pages'] =  $this->manage->get_all_pages($user_data["user_id"]);
+        $data['pages'] =  $this->manage->get_menu_pages($user_data["user_id"]);
         $data['color'] =  getThemeColor($user_data["user_id"]);
         $data['title'] = "Tags & Keywords";
         return view('manage/tags_keywords', $data);
@@ -1172,7 +1172,7 @@ class ManageSection extends BaseController
         if ($this->session->has('login_user')) {
             $user_data = $this->session->get('login_user');
         }
-        $pages =  $this->manage->get_all_pages($user_data["user_id"]);
+        $pages =  $this->manage->get_menu_pages($user_data["user_id"]);
         $data =  $this->manage->all_tags_keywords($user_data["user_id"]);
         if ($data) {
             echo json_encode(['status' => true, 'data' => $data, 'pages' => $pages]);
@@ -1741,7 +1741,7 @@ class ManageSection extends BaseController
             $user_data = $this->session->get('login_user');
         }
         $data['data'] =  $this->manage->images_section($user_data["user_id"]);
-        $data['pages'] =  $this->manage->get_all_pages($user_data["user_id"]);
+        $data['pages'] =  $this->manage->get_menu_pages($user_data["user_id"]);
         $data['images'] =  $this->manage->images_gallery($user_data["user_id"]);
         $data['color'] =  getThemeColor($user_data["user_id"]);
         $data['title'] = "Image Gallery Section";
@@ -1867,7 +1867,7 @@ class ManageSection extends BaseController
             $user_data = $this->session->get('login_user');
         }
         $data['data'] =  $this->manage->images_section($user_data["user_id"]);
-        $data['pages'] =  $this->manage->get_all_pages($user_data["user_id"]);
+        $data['pages'] =  $this->manage->get_menu_pages($user_data["user_id"]);
         $data['images'] =  $this->manage->images_gallery($user_data["user_id"]);
         if ($data) {
             echo json_encode(['status' => true, 'return' => $data]);
@@ -1882,7 +1882,7 @@ class ManageSection extends BaseController
             $user_data = $this->session->get('login_user');
         }
         $data['data'] =  $this->manage->video_section($user_data["user_id"]);
-        $data['pages'] =  $this->manage->get_all_pages($user_data["user_id"]);
+        $data['pages'] =  $this->manage->get_menu_pages($user_data["user_id"]);
         $data['video'] =  $this->manage->video_gallery($user_data["user_id"]);
         $data['color'] =  getThemeColor($user_data["user_id"]);
         $data['title'] = "Video Gallery Section";
@@ -2008,7 +2008,7 @@ class ManageSection extends BaseController
             $user_data = $this->session->get('login_user');
         }
         $data['data'] =  $this->manage->banner_section($user_data["user_id"]);
-        $data['pages'] =  $this->manage->get_all_pages($user_data["user_id"]);
+        $data['pages'] =  $this->manage->get_menu_pages($user_data["user_id"]);
         $data['color'] =  getThemeColor($user_data["user_id"]);
         $data['title'] = "Update Banner";
         return view('manage/banner_section', $data);
@@ -2145,7 +2145,7 @@ class ManageSection extends BaseController
             $user_data = $this->session->get('login_user');
         }
         $data['data'] =  $this->manage->testimonials_section($user_data["user_id"]);
-        $data['pages'] =  $this->manage->get_all_pages($user_data["user_id"]);
+        $data['pages'] =  $this->manage->get_menu_pages($user_data["user_id"]);
         $data['testimonials'] =  $this->manage->testimonials($user_data["user_id"]);
         $data['color'] =  getThemeColor($user_data["user_id"]);
         $data['title'] = "Testimonials Section";
@@ -2261,7 +2261,7 @@ class ManageSection extends BaseController
             $user_data = $this->session->get('login_user');
         }
         $data['data'] =  $this->manage->faqs_section($user_data["user_id"]);
-        $data['pages'] =  $this->manage->get_all_pages($user_data["user_id"]);
+        $data['pages'] =  $this->manage->get_menu_pages($user_data["user_id"]);
         $data['faqs'] =  $this->manage->faqs($user_data["user_id"]);
         $data['color'] =  getThemeColor($user_data["user_id"]);
         $data['title'] = "Faqs Section";
@@ -2376,7 +2376,7 @@ class ManageSection extends BaseController
             $user_data = $this->session->get('login_user');
         }
         $data['data'] =  $this->manage->post_section($user_data["user_id"]);
-        $data['pages'] =  $this->manage->get_all_pages($user_data["user_id"]);
+        $data['pages'] =  $this->manage->get_menu_pages($user_data["user_id"]);
         $data['color'] =  getThemeColor($user_data["user_id"]);
         $data['title'] = "Posts Section";
         return view('manage/post_section', $data);
@@ -2486,7 +2486,7 @@ class ManageSection extends BaseController
         }
         $data['data'] =  $this->manage->mlc_section($user_data["user_id"]);
         $data['mcl'] =  $this->manage->mlc($user_data["user_id"]);
-        $data['pages'] =  $this->manage->get_all_pages($user_data["user_id"]);
+        $data['pages'] =  $this->manage->get_menu_pages($user_data["user_id"]);
         $data['color'] =  getThemeColor($user_data["user_id"]);
         $data['title'] = "MLC Section";
         return view('manage/mlc_section', $data);
@@ -2599,7 +2599,7 @@ class ManageSection extends BaseController
             $user_data = $this->session->get('login_user');
         }
         $data['data'] =  $this->manage->business_section($user_data["user_id"]);
-        $data['pages'] =  $this->manage->get_all_pages($user_data["user_id"]);
+        $data['pages'] =  $this->manage->get_menu_pages($user_data["user_id"]);
         $data['color'] =  getThemeColor($user_data["user_id"]);
         $data['title'] = "Business Query Section";
         return view('manage/business_section', $data);

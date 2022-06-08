@@ -38,6 +38,13 @@
         </div>
     </section>
 
+    <!-- --------Our Videos----------- -->
+<?= $this->include('theme3/frontend/layout/video_gallery') ?>
+
+<!-- --------Image Gallery---------- -->
+<?= $this->include('theme3/frontend/layout/gallery_images') ?>
+
+
     <!-- ----------Our Products------ -->
     <section>
         <div class="container">

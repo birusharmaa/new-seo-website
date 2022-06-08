@@ -1,5 +1,19 @@
 $(function(){$(".theme-switcher").on("click",function(){$(".all-themes-colors").toggleClass("active")});$(document).on("click",function(e){if(!$(e.target).closest(".theme-switcher").length){$(".all-themes-colors").removeClass("active")}});$(".color-item").on("click",function(){const color=$(this).attr("data-theme");let bodyClasses=$("body").attr("class").split(" ");let classToRemove=bodyClasses.find((cla)=>cla.match("theme-"));$("body").removeClass(classToRemove);$("body").addClass("theme-"+color);localStorage.setItem("theme",color)});const themeColor=localStorage.getItem("theme");if(themeColor){$("body").addClass("theme-"+themeColor)}});
 $(document).ready(function(){
+    $('.popup-youtube').magnificPopup({
+        type: 'iframe',
+    });
+    $('.popup-images').magnificPopup({
+        type: 'image',
+        closeBtnInside: true,
+        mainClass: 'mfp-img',
+        gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+    });
+
     // console.log('nahi aayaa yhaaa');
     $('p').each(function(i, value){
         if(!$(this).text().trim()){

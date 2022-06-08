@@ -8,7 +8,7 @@
 <div class="services-page overflow-hidden">
 
     <section>
-    <div class="content-wrap">
+        <div class="content-wrap">
             <div class="position-relative backimg">
                 <nav class="crumb" aria-label="breadcrumb">
                     <ol class="breadcrumb  justify-content-center">
@@ -24,8 +24,13 @@
                 </nav>
             </div>
         </div>
-       
     </section>
+    <!-- --------Our Videos----------- -->
+    <?= $this->include('theme3/frontend/layout/video_gallery') ?>
+
+    <!-- --------Image Gallery---------- -->
+    <?= $this->include('theme3/frontend/layout/gallery_images') ?>
+
 
 
     <section class="mb-4">

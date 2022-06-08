@@ -18,6 +18,16 @@ class Services extends UiController {
         if(!empty($slider)){
             $slider = $slider[0]['slider_image'];
         }
+
+        /**
+         * Make gallery images array
+         */
+        $images = $this->user_slider->galleryImages('Service -');
+        
+         /**
+         * Make video gallery array
+         */
+        $video =  $this->user_slider->getVideoLists('Service -');
         
 
         $slugs = ""; 
@@ -58,6 +68,8 @@ class Services extends UiController {
             'sliders'        => $slider,
             'cart'          => cart_history(),
             'colors'        => $this->colors,
+            'videoes'       => $video,
+            'gallery_images'=> $images,
         ];
         return view($this->user['theme_name'].'/'.'frontend/services_details', $pageData);
     }

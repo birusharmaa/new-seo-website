@@ -11,7 +11,8 @@
 <div class="position-relative pb-50 pt-100">
     <div class="background">
         <div class="background-image jarallax" data-jarallax data-speed="0.8">
-            <!-- <img class="jarallax-img" loading="lazy" src="<?//= base_url(); ?>/theme2/assets/img/about-us-hero-1920x900.jpg" alt=""> -->
+            <!-- <img class="jarallax-img" loading="lazy" src="<? //= base_url(); 
+                                                                ?>/theme2/assets/img/about-us-hero-1920x900.jpg" alt=""> -->
         </div>
         <div class="background-color" style="--background-color: #000; opacity: .25;"></div>
     </div>
@@ -19,6 +20,14 @@
         <h1 class="text-white mb-0 text-center">Services</h1>
     </div>
 </div>
+
+<!-- --------Our Videos----------- -->
+<?= $this->include('theme2/frontend/layout/video_gallery') ?>
+
+<!-- --------Image Gallery---------- -->
+<?= $this->include('theme2/frontend/layout/gallery_images') ?>
+
+
 <div class="container pb-60 bg-gray-light">
     <div class="services2 section-padding">
         <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
@@ -36,24 +45,25 @@
                         } else {
                             $img = base_url() . env('SEO_SUBPATH') . "assets/img/services-img.jpg";
                         }
-                    ?>
+                ?>
 
-<div class="col-12 col-md-6" data-show="startbox">
-                    <div class="service-case lift rounded-4 bg-white shadow overflow-hidden">
-                        <a class="service-case-image" href="<?= base_url() . '/' . 'services/' . $services[$i]['menu_link']; ?>" data-img-height style="--img-height: 64%">
-                            <img loading="lazy" src="<?= $img;?>" alt="" />
-                        </a>
-                        <div class="service-case-body position-relative">
-                            <h4 class="service-case-title text-truncate mb-15"><?= $services[$i]['service']; ?></h4>
-                            <!-- <p class="service-case-text font-size-15 mb-30">
-                                <?//= $services[$i]['short_description']; ?>
+                        <div class="col-12 col-md-6" data-show="startbox">
+                            <div class="service-case lift rounded-4 bg-white shadow overflow-hidden">
+                                <a class="service-case-image" href="<?= base_url() . '/' . 'services/' . $services[$i]['menu_link']; ?>" data-img-height style="--img-height: 64%">
+                                    <img loading="lazy" src="<?= $img; ?>" alt="" />
+                                </a>
+                                <div class="service-case-body position-relative">
+                                    <h4 class="service-case-title text-truncate mb-15"><?= $services[$i]['service']; ?></h4>
+                                    <!-- <p class="service-case-text font-size-15 mb-30">
+                                <? //= $services[$i]['short_description']; 
+                                ?>
                             </p> -->
-                            <a class="service-case-arrow stretched-link" href="<?= base_url() . '/' . 'services/' . $services[$i]['menu_link']; ?>">
-                                <i class="fa-solid fa-arrow-right-long"></i>
-                            </a>
+                                    <a class="service-case-arrow stretched-link" href="<?= base_url() . '/' . 'services/' . $services[$i]['menu_link']; ?>">
+                                        <i class="fa-solid fa-arrow-right-long"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
                 <?php }
                     echo "</div>";

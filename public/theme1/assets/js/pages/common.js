@@ -1,4 +1,18 @@
 $(document).ready(function() {
+    $('.popup-youtube').magnificPopup({
+        type: 'iframe',
+    });
+    $('.popup-images').magnificPopup({
+        type: 'image',
+        closeBtnInside: true,
+        mainClass: 'mfp-img',
+        gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+    });
+    
     $('.one-time').slick({
         dots: false,
         infinite: true,

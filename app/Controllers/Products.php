@@ -23,6 +23,16 @@ class Products extends UiController {
             $slider = $slider[0]['slider_image'];
         }
 
+        /**
+         * Make gallery images array
+         */
+        $images = $this->user_slider->galleryImages('Products -');
+        
+         /**
+         * Make video gallery array
+         */
+        $video =  $this->user_slider->getVideoLists('Products -');
+
         
         
         if(!empty($slug)){
@@ -57,6 +67,8 @@ class Products extends UiController {
             'sliders'        => $slider,
             'cart'          => cart_history(),
             'colors'        => $this->colors,
+            'videoes'       => $video,
+            'gallery_images'=> $images,
         ];
         return view($this->user['theme_name'].'/'.'frontend/product_details', $pageData);
     }

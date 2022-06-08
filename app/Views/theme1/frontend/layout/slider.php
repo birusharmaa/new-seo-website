@@ -1,7 +1,6 @@
 <section>
     <div class="one-time">
         <?php
-        
         if (!empty($sliders)) {
             foreach($sliders as $slider) {
             ?>
@@ -23,6 +22,5 @@
             }
         } 
         ?>
-
     </div>
 </section>

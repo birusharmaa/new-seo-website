@@ -18,10 +18,13 @@
         </h1>
     </div>
 </div>
-<div class="container pb-60">
-    <div class="row pt-50 pb-30">
-    </div>
-</div>
+<!-- --------Our Videos----------- -->
+<?= $this->include('theme2/frontend/layout/video_gallery') ?>
+
+<!-- --------Image Gallery---------- -->
+<?= $this->include('theme2/frontend/layout/gallery_images') ?>
+
+
 <div class="container pb-20">
     <div class="row">
         <!-- ----------Our Products------ -->

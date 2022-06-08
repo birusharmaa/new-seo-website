@@ -118,6 +118,12 @@
             </div>
         </div>
     </section>
+
+    <!-- --------Our Videos----------- -->
+    <?= $this->include('theme1/frontend/layout/video_gallery') ?>
+
+    <!-- --------Image Gallery---------- -->
+    <?= $this->include('theme1/frontend/layout/gallery_images') ?>
 </div>
 
 <?= $this->endSection() ?>

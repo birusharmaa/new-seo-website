@@ -1522,4 +1522,30 @@ p {
   justify-content: center;
 }
 
+.img-gallery {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.bg-gray-light-new {
+  background-color: #e5e5e5;
+}
+
+.mfp-img .mfp-figure .mfp-close {
+  color: #ffffff !important;
+}
+
+.mfp-image-holder .mfp-close,
+.mfp-iframe-holder .mfp-close {
+  color: #fffafa;
+  right: -6px;
+  text-align: right;
+  padding-right: 6px;
+  width: 100%;
+}
+.card {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+}
+
 /*# sourceMappingURL=style.css.map */

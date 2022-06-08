@@ -12,6 +12,16 @@
         </div>
     </section>
 </div>
+
+
+<!-- --------Our Videos----------- -->
+<?= $this->include('theme3/frontend/layout/video_gallery') ?>
+
+<!-- --------Image Gallery---------- -->
+<?= $this->include('theme3/frontend/layout/gallery_images') ?>
+
+
+
 <div class="contact-us-page overflow-hidden mt-5">
     <section class="mb-4">
         <div class="contact section-padding">

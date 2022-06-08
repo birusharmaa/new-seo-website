@@ -7,6 +7,14 @@
 <?= $this->section("contentTheme1") ?>
 <div class="contact-us-page overflow-hidden">
     <?= $this->include('theme1/frontend/layout/slider'); ?>
+
+    <!-- --------Our Videos----------- -->
+    <?= $this->include('theme1/frontend/layout/video_gallery') ?>
+
+    <!-- --------Image Gallery---------- -->
+    <?= $this->include('theme1/frontend/layout/gallery_images') ?>
+
+    
     <section class="mb-4">
         <div class="contact section-padding">
             <div class="text-center mb-5" data-aos="zoom-out" data-aos-duration="1000">

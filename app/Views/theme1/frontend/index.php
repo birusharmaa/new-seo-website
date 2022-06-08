@@ -2,7 +2,7 @@
 <?= $this->section("customCss") ?>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" ref="stylesheet" />
 <style>
-    a{
+    a {
         text-decoration: none !important;
     }
 </style>
@@ -11,30 +11,31 @@
 <div class="home-page overflow-hidden">
     <!-- ------Slider------- -->
     <?= $this->include('theme1/frontend/layout/slider') ?>
-    
+
     <?php
     if ($custom_section['home']) {
         foreach ($custom_section['data'] as $custom) {
-        ?>
-            <section>
-                <div class="container-fluid px-0 mx-0">
-                    <div class="row mx-0 <?= $custom['position'] == "left"? 'flex-row-reverse' : '';  ?> aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
-                        <div class="col-md-7 bg-primary">
-                            <div class="inside-div p-4">
-                                <h2 class="pb-3 fw-bolder"><?= $custom['heading']; ?></h2>
-                                <div class="text-div text-alignment">
-                                    <?= $custom['description']; ?>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-5 px-0">
-                            <div class="side-img <?= $custom['position'] == "stretch" ? 'h-100' : 'h-100'; ?>">
-                                <img src="<?= base_url().env('SEO_SUBPATH').'/uploads/custom_images/' . $custom['upload_image']; ?>" class="<?= $custom['position'] == "stretch" ? 'h-100' : 'h-100'; ?>" alt="" width="100%">
+            $img = !empty($custom['upload_image']) ? base_url() . env('SEO_SUBPATH') . '/uploads/custom_images/' . $custom['upload_image'] : base_url() . env('SEO_SUBPATH') . '/assets/img/service-page-img.jpg';
+    ?>
+        <section>
+            <div class="container-fluid px-0 mx-0">
+                <div class="row mx-0 <?= $custom['position'] == "left" ? 'flex-row-reverse' : '';  ?> aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="col-md-7 bg-primary">
+                        <div class="inside-div p-4">
+                            <h2 class="pb-3 fw-bolder"><?= $custom['heading']; ?></h2>
+                            <div class="text-div text-alignment">
+                                <?= $custom['description']; ?>
                             </div>
                         </div>
                     </div>
-            </section>
-        <?php
+                    <div class="col-md-5 px-0">
+                        <div class="side-img <?= $custom['position'] == "stretch" ? 'h-100' : 'h-100'; ?>">
+                            <img src="<?= $img; ?>" class="<?= $custom['position'] == "stretch" ? 'h-100' : 'h-100'; ?>" alt="" width="100%">
+                        </div>
+                    </div>
+                </div>
+        </section>
+    <?php
         }
     }
     ?>
@@ -143,7 +144,7 @@
                                 if (count($posts) > 0) {
                                     foreach ($posts as $post) {
                                         $img = empty($post['image']) ? base_url() . env('SEO_SUBPATH') . '/assets/img/services3-img.png' : base_url() . env('SEO_SUBPATH') . '/uploads/post_updates_images/' . $post['image'];
-                                    ?>
+                                ?>
                                         <div>
                                             <div class="card me-3 mb-2 card-custom bg-white border-white border-0">
                                                 <div class="card-custom-img">
@@ -152,11 +153,11 @@
                                                 <div class="card-body my-3">
                                                     <h6 class="card-title text-color fw-bold"><?= date('d-M-Y', strtotime($post['created_at'])); ?></h6>
                                                     <p class="card-text text-uppercase fw-bold h6 py-2"><?= $post['title']; ?></p>
-                                                <a href="<?= base_url().env('SEO_SUBPATH').'/'.'updates/'.$post['slug'];?>">
-                                                    <button class="btn btn-color rounded-pill ">
-                                                        Read More
-                                                    </button>
-                                                </a>
+                                                    <a href="<?= base_url() . env('SEO_SUBPATH') . '/' . 'updates/' . $post['slug']; ?>">
+                                                        <button class="btn btn-color rounded-pill ">
+                                                            Read More
+                                                        </button>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -193,20 +194,20 @@
                         <div class="col-md-12 pb-3" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
                             <div class="card card-custom bg-white border-white border-0">
                                 <div class="card-body text-alignment border border-1 p-0 fw-bold">
-                                    <?php    
+                                    <?php
                                     if (count($posts) > 0) {
                                         foreach ($posts as $post) {
-                                            ?>
+                                    ?>
                                             <div class="p-3 hover-bg">
-                                                <a href="<?= base_url().env('SEO_SUBPATH').'/'.'updates/'.$post['slug'];?>"> 
-                                                    <p class="mb-0"><?= $post['title'];?></p>
-                                                    <p class="mb-0"><?= date("d-M-Y", strtotime($post['created_at']));?></p>
+                                                <a href="<?= base_url() . env('SEO_SUBPATH') . '/' . 'updates/' . $post['slug']; ?>">
+                                                    <p class="mb-0"><?= $post['title']; ?></p>
+                                                    <p class="mb-0"><?= date("d-M-Y", strtotime($post['created_at'])); ?></p>
                                                 </a>
                                             </div>
                                             <hr class="w-100 m-0">
-                                        <?php
+                                    <?php
                                         }
-                                    }else{
+                                    } else {
                                         echo "<h4>No update found.</h4>";
                                     }
                                     ?>
@@ -223,39 +224,15 @@
     </section>
 
     <!-- --------Our Videos----------- -->
-    <section class="mb-2 ">
-        <div class="videos section-padding" data-aos="fade-up">
-            <div class="text-center mb-5">
-                <h2><span class="text-color text-uppercase fw-bold">Our Videos</span></h2>
-            </div>
-            <div class="row">
-                <?php
-                if (count($videoes) > 0) {
-                    foreach ($videoes as $video) {
-                ?>
-                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                            <div class="inner-column m-2">
-                                <div class="position-relative w-100" style="margin-top: 30px;">
-                                    <!-- <iframe  src="" frameborder="0" 
-                                    allow="accelerometer; autoplay; encrypted-media; 
-                                    gyroscope; picture-in-picture" allowfullscreen>
-                                </iframe> -->
-                                    <a class="popup-youtube" href="<?= $video['url'] ?>">
-                                        <img class="card-img-top img-fluid" title="<?= $video['title']; ?>" src="<?php base_url(); ?>./assets/img/video-thumb.jpg" />
-                                        <br />
-                                        <h4 class="text-center"><?= $video['title']; ?></h4>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                <?php }
-                } else {
-                    echo "<h2 class='text-center'>No video found.</h2>";
-                }
-                ?>
-            </div>
-        </div>
-    </section>
+    <?= $this->include('theme1/frontend/layout/video_gallery') ?>
+
+   
+
+
+    <!-- --------Image Gallery---------- -->
+    <?= $this->include('theme1/frontend/layout/gallery_images') ?>
+
+
     <!-- --------Contact Us---------- -->
     <section class="mb-4">
         <div class="contact section-padding">
@@ -280,17 +257,8 @@
 
 <?= $this->endSection() ?>
 <?= $this->section("customScripts") ?>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-
-
 <script>
     $(document).ready(function() {
-
-        $('.popup-youtube').magnificPopup({
-            type: 'iframe',
-        });
-
-        
         $('#update').slick({
             dots: true,
             infinite: true,

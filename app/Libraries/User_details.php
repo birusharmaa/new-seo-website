@@ -12,8 +12,9 @@ use App\Models\ProductsModel;
 use App\Models\VideoModel;
 use App\Models\PostsModel;
 use App\Models\Appearance_model;
-
-
+use App\Models\GallerySection;
+use App\Models\ImagesGallary;
+use App\Models\VideoGallerySection;
 
 class User_details{
 
@@ -221,10 +222,33 @@ class User_details{
      *
      * @return void
      */
-    public function getVideoLists(){
-        $this->video = new VideoModel();
-        $all_videoes = $this->video->findAll();
-        return $all_videoes;
+    public function getVideoLists($data = null){
+        $this->video_link    = new VideoModel();
+        $this->video_section = new VideoGallerySection();
+        $video_section = $this->video_section->select(['videos', 'pages'])->findAll();
+        $videos = $video_section[0]['videos'];
+        $video_section_pages = json_decode($video_section[0]['pages']);        
+        $videos = str_replace('"',"", $videos);
+        $videos = str_replace('[',"", $videos);
+        $videos = str_replace(']',"", $videos);
+        $videos = str_replace("" ,"", $videos);
+        $videos = explode(",", $videos);
+        $video_lists = [];
+        foreach($videos as $v){
+            $this->video_link ->select(['url', 'title']);
+            $video = $this->video_link->find($v);
+            $url   = $video['url'];
+            $title = $video['title'];
+            $arr = [ "url"=>$url, "title"=>$title ];
+            $video_lists[] = $arr;
+        }
+        $final_video_lists = [];
+        foreach($video_section_pages as $v){
+            if($v->sub_menu_title == $data){
+                $final_video_lists = $video_lists;
+            }
+        }
+        return $final_video_lists;
     }
 
     public function getAllPostLists(){
@@ -282,6 +306,40 @@ class User_details{
     public function getColors(){
         $appearance =new Appearance_model();
         return $appearance->findAllData();
+    }
+
+    public function galleryImages($data){
+
+        $this->gallery_section  = new GallerySection();
+        $this->gallery_images   = new ImagesGallary();
+        
+        $this->gallery_section->select(['pages', 'images']);
+        $gallery_section_details = $this->gallery_section->findAll();
+       
+        $gallery_section_pages = json_decode($gallery_section_details[0]['pages']);        
+        
+        $images = $gallery_section_details[0]['images'];
+        $images = str_replace('"',"", $images);
+        $images = str_replace('[',"", $images);
+        $images = str_replace(']',"", $images);
+        $images = str_replace("" ,"", $images);
+        $images = explode(",", $images);
+        $images_list = [];
+        foreach($images as $v){
+            $this->gallery_images->select(['image', 'title']);
+            $image = $this->gallery_images->find($v);
+            $img   = $image['image'];
+            $title = $image['title'];
+            $arr = [ "image"=>$img, "title"=>$title ];
+            $images_list[] = $arr;
+        }
+        $final_images_list = [];
+        foreach($gallery_section_pages as $gi){
+            if($gi->sub_menu_title == $data){
+                $final_images_list = $images_list;
+            }
+        }
+        return $final_images_list;
     }
 
     

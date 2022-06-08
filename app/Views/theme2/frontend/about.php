@@ -24,6 +24,15 @@
             <h1 class="text-white mb-0 text-center">About Us</h1>
         </div>
     </div>
+
+    <!-- --------Our Videos----------- -->
+<?= $this->include('theme2/frontend/layout/video_gallery') ?>
+
+<!-- --------Image Gallery---------- -->
+<?= $this->include('theme2/frontend/layout/gallery_images') ?>
+
+
+
     <div class="pt-120 pb-130">
             <div class="container">
                 <div class="row align-items-center gy-50">
